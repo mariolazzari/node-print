@@ -1,6 +1,6 @@
 // https://www.npmjs.com/package/pdf-to-printer
 const printer = require("pdf-to-printer");
-const TEST_FILE = "test.pdf";
+const TEST_FILE = "./data/test.pdf";
 
 // show printers list
 printer
@@ -18,7 +18,7 @@ const options = {
 const printPDF = async (pdf, options = {}) => {
   try {
     await printer.print(pdf, options);
-    console.log(`${pdf} printed succesfully.`);
+    console.log(`${pdf} printed successfully.`);
   } catch (ex) {
     console.error(`Error while sending ${pdf} to printer.`, ex);
   }
