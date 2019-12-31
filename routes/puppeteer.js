@@ -2,7 +2,7 @@
 const router = require("express").Router();
 const { printFile, printSite } = require("../controllers/puppeteer");
 
-router.route("/file").get(printFile);
-router.route("/site").get(printSite);
+router.get("/file", printFile);
+router.get("/site", printSite);
 
 module.exports = router;

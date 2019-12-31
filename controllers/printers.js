@@ -1,11 +1,15 @@
 const printer = require("pdf-to-printer");
 const path = require("path");
+const Jimp = require("jimp");
 
 // test file to print and print options
 const TEST_PDF = path.join(process.root, "data", "test.pdf");
 const options = {
   printer: "PDFCreator"
 };
+
+// test file for printing labels
+const LABEL = path.join(process.root, "data", "label.jpg");
 
 // get printers list
 const getPrintersList = async (req, res, next) => {
@@ -38,8 +42,14 @@ const printPDF = async (req, res, next) => {
   }
 };
 
+// print label
+const printLabel = async (req, res, next) => {
+  res.status(200).json({ message: "Not yet implemented..." });
+};
+
 // exports
 module.exports = {
   getPrintersList,
-  printPDF
+  printPDF,
+  printLabel
 };
