@@ -56,22 +56,27 @@ const printSite = async (req, res, next) => {
 
 // save file to pdf
 const printFile = async (req, res, next) => {
-  res.status(200).json({ message: "Not yet implemented..." });
-
   try {
+    const file = path.join(process.root, "node-print", "../data/label.jpg");
+
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.setViewport(viewPort);
     await page.goto(`file://${file}`, goto);
     await page.pdf({
-      path: FILE,
+      path: "label.pdf",
       pageRanges: "1",
-      format: "A4",
-      printBackground: true
+      format: "A5",
+      printBackground: false
     });
     browser.close();
-  } catch (error) {
-    console.log("Error while printing file with puppeteer.", error);
+
+    printer.print("label.pdf");
+
+    res.status(200).json({ message: "File printed." });
+  } catch (ex) {
+    console.error(ex);
+    res.status(500).json({ error: ex.message });
   }
 };
 

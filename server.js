@@ -7,6 +7,8 @@ const { EXPRESS_PORT } = process.env;
 // set project root dir
 process.root = __dirname;
 
+console.log(process.root);
+
 // express configurations
 const app = express();
 app.use(express.json());
