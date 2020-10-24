@@ -2,7 +2,7 @@ const router = require("express").Router();
 const {
   getPrintersList,
   printPDF,
-  printLabel
+  printLabel,
 } = require("../controllers/printers");
 
 // printer routes

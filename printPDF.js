@@ -11,7 +11,7 @@ printer
 // printer config
 const options = {
   //printer: "Multifunzione"
-  printer: "PDFCreator" // default one, if no printer option used
+  printer: "PDFCreator", // default one, if no printer option used
 };
 
 // send pdf directly to printer

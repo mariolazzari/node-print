@@ -20,7 +20,7 @@ const printSite = async (url = "https://italcoeng.com") => {
       path: SITE,
       pageRanges: "1",
       format: "A4",
-      printBackground: true
+      printBackground: true,
     });
     browser.close();
   } catch (error) {
@@ -39,7 +39,7 @@ const printFile = async (file = LABEL) => {
       path: FILE,
       pageRanges: "1",
       format: "A4",
-      printBackground: true
+      printBackground: true,
     });
     browser.close();
   } catch (error) {
@@ -53,5 +53,5 @@ printFile();
 // exports
 module.exports = {
   printSite,
-  printFile
+  printFile,
 };
