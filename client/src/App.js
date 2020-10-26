@@ -1,9 +1,8 @@
-import React from "react";
 import { printComponent } from "react-print-tool";
 import Report from "./Report";
 
 const App = () => {
-  const printReport = async () => await printComponent(<Report />);
+  const printReport = async () => await printComponent(<Report name="mario" />);
 
   return (
     <div>

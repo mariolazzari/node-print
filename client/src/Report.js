@@ -1,10 +1,19 @@
 import React from "react";
 
-const Report = () => {
+const Report = props => {
   return (
-    <div>
+    <div
+      style={{
+        width: "9cm",
+        height: "6cm",
+        border: "1px solid black",
+        padding: 1,
+      }}
+    >
       <h1>Report title</h1>
       <h2>Example</h2>
+
+      <h3>{`Ciao ${props.name}`}</h3>
 
       <table>
         <thead>
